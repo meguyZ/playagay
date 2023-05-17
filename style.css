@@ -1,0 +1,115 @@
+.container {
+    background-image: url("bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    transition: background-color 1s;
+  }
+  
+  .container.dark {
+    background-color: #000;
+  }
+  
+  .button {
+    /* รายละเอียดปุ่ม */
+    transition: transform 0.3s;
+    /* ... */
+  }
+  
+  .container.clicked .button {
+    transform: translateY(-50%);
+  }
+  
+  .button {
+    display: inline-block;
+    padding: 0;
+    margin: 10px;
+    border: none;
+    border-radius: 50%;
+    background-color: transparent;
+    transition: transform 0.3s;
+    text-align: center;
+    width: 250px;
+    height: 250px;
+  }
+  
+  .button img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0%;
+  }
+  
+  .button:hover {
+    transform: scale(1.1);
+  }
+  
+  .credits {
+    text-align: center;
+    color: #fff;
+    font-family: 'Font Name', sans-serif;
+    font-size: 16px;
+    margin-bottom: 20px;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .audio-graph {
+    width: 200px;
+    height: 4px;
+    background-color: #fff;
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  
+  .audio-graph::before,
+  .audio-graph::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 100%;
+    background-color: #007bff;
+    animation: audioGraphAnimation 1s linear infinite;
+  }
+  
+  .audio-graph::before {
+    margin-right: 5px;
+    animation-delay: 0.1s;
+  }
+  
+  @keyframes audioGraphAnimation {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+  
+  .audio-bar {
+    width: 0;
+    height: 100%;
+    background-color: #007bff;
+    border-radius: 2px;
+    transition: width 0.1s;
+  }
+  
+  #playButton.active + .audio-graph .audio-bar {
+    transition: width 0.1s linear;
+  }
+  
+  .button.active img {
+    transform: scale(1.1);
+  }
+  

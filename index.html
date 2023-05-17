@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>เว็บไซต์ตัวอย่าง</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <a href="https://bit.ly/42OMkwc" class="button">
+          <img src="play.png" alt="ปุ่ม 1" width="150" height="150">
+        </a>
+        <a href="https://discord.gg/FYSvu3vS5F" class="button">
+          <img src="join.png" alt="ปุ่ม 2" width="150" height="150">
+        </a>
+        <a href="https://bit.ly/3W9fgfw" class="button">
+          <img src="dowlone.png" alt="ปุ่ม 3" width="150" height="150">
+        </a>
+        <div class="audio-graph"></div>
+      </div>
+      
+  <div class="credits">เครดิต: Meguy (BanK)</div>
+  <audio id="audioPlayer" src="music.mp3" loop></audio>
+  <script>
+    const audioPlayer = document.getElementById('audioPlayer');
+    const container = document.querySelector('.container');
+
+    container.addEventListener('click', function() {
+      if (audioPlayer.paused) {
+        audioPlayer.play();
+      } else {
+        audioPlayer.pause();
+      }
+    });
+  </script>
+</body>
+</html>
